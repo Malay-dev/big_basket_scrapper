@@ -12,6 +12,7 @@ RUN if [ "$NODE_ENV" = "development" ]; \
     then npm install; \
     else npm install --only=production; \
     fi
+RUN npx puppeteer browsers install
 COPY . ./
 ENV PORT 5000
 EXPOSE $PORT
